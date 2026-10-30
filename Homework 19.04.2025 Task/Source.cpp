@@ -9,7 +9,9 @@ private:
         if (znam == 0) {
             return;
         }
-        int spD = (chys, znam);
+        int a = chys < 0 ? -chys : chys, b = znam < 0 ? -znam : znam;
+        while (b != 0) { int t = a % b; a = b; b = t; }
+        int spD = a == 0 ? 1 : a;
         chys /= spD;
         znam /= spD;
         if (znam < 0) {
